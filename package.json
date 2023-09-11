@@ -13,6 +13,7 @@
     "globe.gl": "^2.29.3",
     "three": "^0.156.1",
     "vue": "^3.3.4",
+    "vue-cesium": "^3.2.2",
     "vue-router": "^4.2.4",
     "vue3-google-map": "^0.17.1"
   },
