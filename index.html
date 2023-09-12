@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.109/Build/Cesium/Cesium.js"></script>
-    <link href="https://cesium.com/downloads/cesiumjs/releases/1.109/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cesium.com/downloads/cesiumjs/releases/1.109/Build/Cesium/Widgets/widgets.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
@@ -13,20 +16,9 @@
     <script type="module" src="/src/main.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
     <script src="https://www.webglearth.com/v2/api.js"></script>
+    <script
+      type="text/javascript"
+      src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"
+    ></script>
   </body>
 </html>
-<script>
-    const toggleSearch = () => {
-    document.getElementById("searchInput").classList.toggle("hidden");
-  };
-  const mdOptionsToggle = () => {
-    document.getElementById("md-searchbar").classList.toggle("hidden");
-    document.getElementById("md-searchbar").classList.toggle("flex");
-  };
-  const openMenu = () => {
-    document.getElementById("mobile-menu").classList.remove("hidden");
-  };
-  const closeMenu = () => {
-    document.getElementById("mobile-menu").classList.add("hidden");
-  };
-</script>
