@@ -26,4 +26,144 @@
         alt="" />
     </div>
   </section>
+  <!-- component -->
+  <div class="flex flex-col bg-white m-auto p-auto">
+    <h1 class="flex py-5 lg:px-20 md:px-10 px-5 md:mx-20 mx-5 font-bold text-4xl text-gray-800">
+      Example
+    </h1>
+    <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
+      <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
+        <div class="inline-block px-3">
+          <div class="w-64 h-64 max-w-xs">
+            <figure
+              class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+              <a href="#">
+                <img class="rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                  alt="image description">
+              </a>
+              <figcaption class="absolute px-4 text-lg text-white bottom-6">
+                <p>Do you want to get notified when a new component is added to Flowbite?</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="inline-block px-3">
+          <div class="w-64 h-64 max-w-xs ">
+            <figure
+              class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+              <a href="#">
+                <img class="rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                  alt="image description">
+              </a>
+              <figcaption class="absolute px-4 text-lg text-white bottom-6">
+                <p>Do you want to get notified when a new component is added to Flowbite?</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="inline-block px-3">
+          <div class="w-64 h-64 max-w-xs ">
+            <figure
+              class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+              <a href="#">
+                <img class="rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                  alt="image description">
+              </a>
+              <figcaption class="absolute px-4 text-lg text-white bottom-6">
+                <p>Do you want to get notified when a new component is added to Flowbite?</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="inline-block px-3">
+          <div class="w-64 h-64 max-w-xs ">
+            <figure
+              class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+              <a href="#">
+                <img class="rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                  alt="image description">
+              </a>
+              <figcaption class="absolute px-4 text-lg text-white bottom-6">
+                <p>Do you want to get notified when a new component is added to Flowbite?</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="inline-block px-3">
+          <div class="w-64 h-64 max-w-xs ">
+            <figure
+              class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+              <a href="#">
+                <img class="rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                  alt="image description">
+              </a>
+              <figcaption class="absolute px-4 text-lg text-white bottom-6">
+                <p>Do you want to get notified when a new component is added to Flowbite?</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="inline-block px-3">
+          <div class="w-64 h-64 max-w-xs ">
+            <figure
+              class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+              <a href="#">
+                <img class="rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                  alt="image description">
+              </a>
+              <figcaption class="absolute px-4 text-lg text-white bottom-6">
+                <p>Do you want to get notified when a new component is added to Flowbite?</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="inline-block px-3">
+          <div class="w-64 h-64 max-w-xs ">
+            <figure
+              class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+              <a href="#">
+                <img class="rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                  alt="image description">
+              </a>
+              <figcaption class="absolute px-4 text-lg text-white bottom-6">
+                <p>Do you want to get notified when a new component is added to Flowbite?</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="inline-block px-3">
+          <div class="w-64 h-64 max-w-xs ">
+            <figure
+              class="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0">
+              <a href="#">
+                <img class="rounded-lg"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png"
+                  alt="image description">
+              </a>
+              <figcaption class="absolute px-4 text-lg text-white bottom-6">
+                <p>Do you want to get notified when a new component is added to Flowbite?</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+<style>
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+</style>
