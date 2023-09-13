@@ -107,7 +107,7 @@
     </div>
 
     <!-- xs to lg -->
-      <div class="px-4 mx-auto sm:px-6 lg:px-8">
+      <div class="hidden px-4 mx-auto sm:px-6 lg:px-8">
 
         <div class="mt-6" id="navbar-default">
           <div class="flex flex-col space-y-2">
