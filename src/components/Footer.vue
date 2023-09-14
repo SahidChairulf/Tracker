@@ -1,11 +1,10 @@
 <template>
-    <section class="py-10 bg-black sm:pt-16 lg:pt-24">
+    <section class="py-10 bg-[#435334] sm:pt-16 lg:pt-24 drop-shadow-2xl">
         <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div class="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
                 <div class="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
-                    <h1 class="text-2xl cursor-pointer dark:text-white" aria-label="the Crib.">
-                        <h1 class="logo text-green-600 hover:text-[#002D74]">Mang<span
-                                class="text-[#002D74] hover:text-green-600">Rovin</span></h1>
+                    <h1 class="text-2xl cursor-pointer dark:text-white">
+                        <a id="logo" class="btn btn-ghost normal-case text-xl text-[#FAF1E4]">MangRovin</a>
                     </h1>
 
                     <p class="text-base leading-relaxed text-gray-400 mt-7">Amet minim mollit non deserunt ullamco est sit
@@ -14,7 +13,7 @@
                     <ul class="flex items-center space-x-3 mt-9">
                         <li>
                             <a href="#" title=""
-                                class="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                                class="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-[#9EB384] focus:bg-[#9EB384]">
                                 <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     fill="currentColor">
                                     <path
@@ -26,7 +25,7 @@
 
                         <li>
                             <a href="#" title=""
-                                class="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                                class="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-[#9EB384] focus:bg-[#9EB384]">
                                 <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     fill="currentColor">
                                     <path
@@ -38,7 +37,7 @@
 
                         <li>
                             <a href="#" title=""
-                                class="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                                class="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-[#9EB384] focus:bg-[#9EB384]">
                                 <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     fill="currentColor">
                                     <path
@@ -54,7 +53,7 @@
 
                         <li>
                             <a href="#" title=""
-                                class="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                                class="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-[#9EB384] focus:bg-[#9EB384]">
                                 <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     fill="currentColor">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -72,25 +71,25 @@
                     <ul class="mt-6 space-y-4">
                         <li>
                             <a href="#" title=""
-                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-[#FAF1E4] focus:text-[#FAF1E4]">
                                 About </a>
                         </li>
 
                         <li>
                             <a href="#" title=""
-                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-[#FAF1E4] focus:text-[#FAF1E4]">
                                 Features </a>
                         </li>
 
                         <li>
                             <a href="#" title=""
-                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-[#FAF1E4] focus:text-[#FAF1E4]">
                                 Works </a>
                         </li>
 
                         <li>
                             <a href="#" title=""
-                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-[#FAF1E4] focus:text-[#FAF1E4]">
                                 Career </a>
                         </li>
                     </ul>
@@ -102,25 +101,25 @@
                     <ul class="mt-6 space-y-4">
                         <li>
                             <a href="#" title=""
-                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-[#FAF1E4] focus:text-[#FAF1E4]">
                                 Customer Support </a>
                         </li>
 
                         <li>
                             <a href="#" title=""
-                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-[#FAF1E4] focus:text-[#FAF1E4]">
                                 Delivery Details </a>
                         </li>
 
                         <li>
                             <a href="#" title=""
-                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-[#FAF1E4] focus:text-[#FAF1E4]">
                                 Terms & Conditions </a>
                         </li>
 
                         <li>
                             <a href="#" title=""
-                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+                                class="flex text-base text-gray-400 transition-all duration-200 hover:text-[#FAF1E4] focus:text-[#FAF1E4]">
                                 Privacy Policy </a>
                         </li>
                     </ul>
@@ -131,7 +130,7 @@
 
                     <form action="#"
                         class="py-1 pl-6 w-full pr-1 flex mt-6 gap-3 items-center text-gray-600 shadow-lg shadow-gray-200/20
-                            border border-gray-200 bg-gray-100 rounded-full ease-linear focus-within:bg-white  focus-within:border-blue-600">
+                            border border-gray-200 bg-gray-100 rounded-full ease-linear focus-within:bg-white  focus-within:border-[#9EB384]">
                         <span class="min-w-max pr-2 border-r border-gray-200">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -140,10 +139,10 @@
                             </svg>
                         </span>
                         <input type="email" name="" id="" placeholder="johndoe@gmail.com"
-                            class="w-full py-3 outline-none bg-transparent">
+                            class="w-full border-[#9EB384] hover:border-[#]">
                         <button
                             class="flex text-white justify-center items-center w-max min-w-max sm:w-max px-6 h-12 rounded-full outline-none relative overflow-hidden border duration-300 ease-linear
-                                after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-[#172554] hover:after:opacity-100 hover:after:scale-[2.5] bg-blue-600 border-transparent hover:border-[#172554]">
+                                after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-black hover:after:opacity-100 hover:after:scale-[2.5] bg-[#9EB384] border-transparent hover:border-black">
                             <span class="hidden sm:flex relative z-[5]">
                                 Get Started
                             </span>
@@ -161,3 +160,10 @@
         </div>
     </section>
 </template>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@600&display=swap');
+
+#logo {
+    font-family: 'Merienda', cursive;
+}
+</style>

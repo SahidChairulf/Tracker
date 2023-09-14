@@ -29,7 +29,8 @@
   };
   </script> -->
 <template>
-  <div id="earth_div" class="bg-gray-900"></div>
+  <div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=university%20of%20san%20francisco&amp;t=k&amp;z=20&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" style="width: 460px; height: 400px;"></iframe>
+  <a href="https://www.eireportingonline.com">ei reporting</a></div></div>
 </template>
 <script>
 function initialize() {
@@ -56,3 +57,4 @@ function initialize() {
 }
 window.onload = initialize;
 </script>
+<style>.mapouter{position:relative;height:400px;width:460px}.gmap_canvas{overflow:hidden;height:400px;width:460px}.gmap_canvas iframe{position:relative;z-index:2}.gmap_canvas a{top:0;z-index:0}</style>
