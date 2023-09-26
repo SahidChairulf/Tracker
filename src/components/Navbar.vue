@@ -15,9 +15,11 @@
                           <a>Homepage</a>
                       </li>
                   </RouterLink>
+                  <RouterLink to="/maps">
                   <li>
-                      <a>About</a>
+                      <a>Maps</a>
                   </li>
+                </RouterLink>
               </ul>
           </div>
       </div>
