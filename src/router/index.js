@@ -30,7 +30,27 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../components/Globe.vue')
-    }
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('../components/Login.vue')
+    },
+    {
+      path: '/user',
+      name: 'User',
+      component: () => import('../views/BoardUser.vue')
+    },
+    {
+      path: '/admin',
+      name: 'Admin',
+      component: () => import('../views/admin/BoardAdmin.vue')
+    },
+    {
+      path: '/moderator',
+      name: 'Moderator',
+      component: () => import('../views/BoardModerator.vue')
+    },
   ]
 })
 
