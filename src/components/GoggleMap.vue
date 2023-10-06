@@ -61,40 +61,7 @@ export default {
         price: feature.properties.Price,
       };
 
-      const popupContent = `
-    <div class="custom-popup-content">
-      <div class="popup-title">${this.popupInfo.name}</div>
-      <div class="popup-info"><strong>Diameter:</strong> ${this.popupInfo.diameter}</div>
-      <div class="popup-info"><strong>Price:</strong> ${this.popupInfo.price}</div>
-      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" @click="showPopupWithIndex('next')">Next</button>
-      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" @click="showPopupWithIndex('previous')">Previous</button>
-    </div>
-  `;
-
-      const customStyles = `
-    .custom-popup-content {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      padding: 50px; /* Increase the padding to make the popup larger */
-      border-radius: 5px;
-    }
-    .popup-title {
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    .popup-info {
-      margin-bottom: 5px;
-    }
-    .popup-button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  `;
+     
 
       new maplibregl.Popup()
         .setLngLat(e.lngLat)
@@ -155,92 +122,108 @@ export default {
     price: e.features[0].properties.Price,
   };
 
-  const coordinates = e.features[0].geometry.coordinates[0];
+const coordinates = e.features[0].geometry.coordinates[0];
 const centerLng = coordinates.reduce((sum, coord) => sum + coord[0], 0) / coordinates.length;
 const centerLat = coordinates.reduce((sum, coord) => sum + coord[1], 0) / coordinates.length;
 
-const zoom = 11; // Sesuaikan dengan kebutuhan
-const pitch = 60; // Sesuaikan dengan kebutuhan
+const zoom = 10; // Adjust as needed
+const pitch = 60; // Adjust as needed
+const initialBearing = 0; // Initial bearing angle
+const duration = 6000; // Animation duration in milliseconds
+let animationStarted = false;
 
-let initialBearing = 0; // Initial bearing angle
-const duration = 6000; // Durasi animasi dalam milidetik
-const startTime = performance.now(); // Timestamp when animation starts
+// Function to start the animation
+function startAnimation() {
+  if (!animationStarted) {
+    animationStarted = true;
+    const startTime = performance.now();
 
-// Create a function for the animation
-// Create a function for the animation with interpolation
-function animate() {
-  const currentTime = performance.now();
-  const elapsedTime = currentTime - startTime;
+    function animate() {
+      const currentTime = performance.now();
+      const elapsedTime = currentTime - startTime;
 
-  if (elapsedTime < duration) {
-    const progress = elapsedTime / duration;
-    
-    // Interpolate center, zoom, pitch, and bearing
-    const interpolatedCenterLng = centerLng;
-    const interpolatedCenterLat = centerLat;
-    const interpolatedZoom = zoom;
-    const interpolatedPitch = pitch;
-    const interpolatedBearing = initialBearing + (progress * 360);
+      if (elapsedTime < duration) {
+        const progress = elapsedTime / duration;
 
-    map.easeTo({
-      center: [interpolatedCenterLng, interpolatedCenterLat],
-      zoom: interpolatedZoom,
-      pitch: interpolatedPitch,
-      bearing: interpolatedBearing,
-    });
+        // Interpolate center, zoom, pitch, and bearing
+        const interpolatedCenterLng = centerLng;
+        const interpolatedCenterLat = centerLat;
+        const interpolatedZoom = zoom;
+        const interpolatedPitch = pitch;
+        const interpolatedBearing = initialBearing + progress * 360;
 
-    // Request the next frame of animation
+        map.easeTo({
+          center: [interpolatedCenterLng, interpolatedCenterLat],
+          zoom: interpolatedZoom,
+          pitch: interpolatedPitch,
+          bearing: interpolatedBearing,
+        });
+
+        // Request the next frame of animation
+        requestAnimationFrame(animate);
+      } else {
+        // Animation is complete
+        map.easeTo({
+          center: [centerLng, centerLat],
+          zoom: zoom,
+          pitch: pitch,
+          bearing: initialBearing,
+        });
+      }
+    }
+
+    // Start the animation
     requestAnimationFrame(animate);
-  } else {
-    // Animation is complete
-    map.easeTo({
-      center: [centerLng, centerLat],
-      zoom: zoom,
-      pitch: pitch,
-      bearing: initialBearing + (progress * 360), // Rotate back to the initial bearing
-    });
   }
 }
 
-// Start the animation
-requestAnimationFrame(animate);
+// Call the startAnimation function when needed, for example, in response to an event.
+startAnimation();
 
-  const popupContent = `
-    <div class="custom-popup-content w-auto h-auto">
-      <div class="popup-title">${this.popupInfo.name}</div>
-      <div class="popup-info"><strong>Diameter:</strong> ${this.popupInfo.diameter}</div>
-      <div class="popup-info"><strong>Price:</strong> ${this.popupInfo.price}</div>
-      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" @click="showPopupWithIndex('next')">Next</button>
-      <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" @click="showPopupWithIndex('previous')">Previous</button>
+
+const popupContent = `
+  <div class="custom-popup-content">
+    <div class="popup-title">${this.popupInfo.name}</div>
+    <div class="popup-info"><strong>Diameter:</strong> ${this.popupInfo.diameter}</div>
+    <div class="popup-info"><strong>Price:</strong> ${this.popupInfo.price}</div>
+    <div class="popup-img">
+      <img src="https://cdn.discordapp.com/attachments/1134376125821374504/1159779997758791690/mangrove-tree-3d-rendering-illustration-free-photo-removebg-preview.png?ex=6532444b&is=651fcf4b&hm=6fc1f083be857dac5d840691d2cb8017bfc9a292da5a588c2696d6d4a1f7f622&" alt="Gambar Anda">
     </div>
-  `;
+    <button type="button" class="popup-button" @click="showPopupWithIndex('next')">Next</button>
+    <button type="button" class="popup-button" @click="showPopupWithIndex('previous')">Previous</button>
+  </div>
+`;
 
-  const customStyles = `
-    .custom-popup-content {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      radius
-      padding: 100px; /* Increase the padding to make the popup larger */
-      border-radius: 5px;
-    }
-    .popup-title {
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    .popup-info {
-      margin-bottom: 5px;
-    }
-    .popup-button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 9px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-  `;
+const customStyles = `
+  .custom-popup-content {
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    border-radius: 5px;
+  }
+  .popup-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .popup-info {
+    margin-bottom: 5px;
+  }
+  .popup-img{
+    width: 100px;
+    height: 100px;
+    position: center;
+  }
+  .popup-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+`;
+
 
   new maplibregl.Popup()
     .setLngLat(e.lngLat)

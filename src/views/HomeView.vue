@@ -2,26 +2,13 @@
   <header id="up" class="bg-center bg-fixed bg-no-repeat bg-cover h-screen">
     <!-- Overlay Background + Center Control -->
     <div class="h-screen bg-opacity-50 bg-black flex items-center justify-center" style="background:rgba(0,0,0,0.5);">
-      <div class="mx-2 text-center">
-        <h1 class="text-[#FAF1E4] font-extrabold text-4xl xs:text-5xl md:text-6xl">
-          <span class="text-[#FAF1E4]">Right</span> Place To
+      <div class="text-center w-auto justify-center mx-auto">
+        <h1 class="text-[#FAF1E4] lg:w-full font-extrabold text-3xl  md:text-5xl">
+          Integrate Transparent Tree Planting Into Your Business 
         </h1>
-        <h2 class="text-[#FAF1E4] font-extrabold text-3xl xs:text-4xl md:text-5xl leading-tight">
-          Get a <span class="text-[#FAF1E4]">Better</span> and <span class="text-[#FAF1E4]">Professionals</span> Design
+        <h2 class="text-[#FAF1E4] font-extrabold text-lg  md:text-3xl leading-tight">
+          Innovative and easy ways to become sustainable  
         </h2>
-
-        <div class="py-6">
-          <button
-            class="bg-[#9EB384] text-black active:bg-[#9EB384] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            type="button">
-            Regular
-          </button>
-          <button
-            class="bg-[#9EB384] text-black active:bg-[#9EB384] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            type="button">
-            Regular
-          </button>
-        </div>
       </div>
     </div>
   </header>
