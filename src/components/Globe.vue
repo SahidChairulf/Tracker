@@ -1,7 +1,7 @@
 <template>
   <div ref="container" class="flex inset-y-0 right-0 w-screen">
     <canvas class="webgl"></canvas>
-    <div class=" absolute sm:w-full lg:w-1/2 md:w-1/2 top-1/2 left-0 transform -translate-y-1/2">
+    <div class=" absolute sm:w-full lg:ml-12 lg:w-1/2 md:w-1/2 top-1/2 left-0 transform -translate-y-1/2">
       <div class="title text-[#FAF1E4] dark:text-gray-200 px-4 md:px-8">
         <h1 class="text-xl md:text-2xl lg:text-3xl uppercase font-semibold">Get well soon dear Earth</h1>
         <p class="text-justify font-normal text-[#FAF1E4] my-2 md:my-4">
@@ -11,7 +11,7 @@
           humanity as well.
         </p>
         <RouterLink to="/maps">
-        <button class="btn bg-[#9EB384] text-[#FAF1E4] font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-110">Let's Clean</button>
+        <button class="btn bg-[#9EB384] hover:bg-green-600 text-[#FAF1E4] font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-110">Let's Clean</button>
       </RouterLink>
       </div>
     </div>
@@ -24,95 +24,85 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 export default {
   mounted() {
-    // global variables
     let scene;
     let camera;
     let renderer;
-    const canvas = document.querySelector('.webgl');
+    const canvas = this.$el.querySelector('.webgl');
 
-    // scene setup
+    // Initialize scene, camera, and renderer
     scene = new THREE.Scene();
-
-    // camera setup
-    const fov = 60;
-    const aspect = window.innerWidth / window.innerHeight;
-    const near = 0.1;
-    const far = 1000;
-
-    camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 2;
-    scene.add(camera);
-
-    // renderer setup
     renderer = new THREE.WebGLRenderer({
       canvas: canvas,
       antialias: true,
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio || 1);
-    renderer.autoClear = false;
-    renderer.setClearColor(0x000000); // Ubah menjadi 0x000000 (hitam gelap)
 
-    // orbit control setup
+    // Initialize OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
 
-    // earth geometry
-    const earthGeometry = new THREE.SphereGeometry(0.6, 32, 32);
+    // Load Earth textures
+    const earthTexture = new THREE.TextureLoader().load('https://cdn.discordapp.com/attachments/1134376125821374504/1159740511935017040/earthmap1k.jpg');
+    const bumpMap = new THREE.TextureLoader().load('https://cdn.discordapp.com/attachments/1134376125821374504/1156950337777848330/earthbump.jpg');
+    const cloudTexture = new THREE.TextureLoader().load('https://cdn.discordapp.com/attachments/1134376125821374504/1156939478259204166/earthCloud.png');
 
-    // earth material
-    const earthMaterial = new THREE.MeshPhongMaterial({
-      roughness: 0.5,
-      metalness: 0,
-      map: new THREE.TextureLoader().load('https://cdn.discordapp.com/attachments/1134376125821374504/1156816892804218901/earthmap1k.jpg?ex=6516592f&is=651507af&hm=3186fd5dd2b381ec3e7439272366f713de6425dc30170cac09df753a20859e1f&'),
-      bumpMap: new THREE.TextureLoader().load('https://cdn.discordapp.com/attachments/1134376125821374504/1156950337777848330/earthbump.jpg?ex=6516d577&is=651583f7&hm=5f6707aec2a9a6f4f3abab18fdfd2db3ecdb45533ea1e027a333d9c68310e88a&'),
+    // Create Earth material
+    const earthMaterial = new THREE.MeshStandardMaterial({
+      map: earthTexture,
+      bumpMap: bumpMap,
       bumpScale: 0.3,
+      roughness: 0.5, // Adjust the roughness for a realistic look
+      metalness: 0.5, // Adjust the metalness for a realistic look
     });
 
-    // earth mesh
+    // Create Earth geometry and mesh
+    const earthGeometry = new THREE.SphereGeometry(0.6, 64, 64);
     const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
     scene.add(earthMesh);
 
-    // cloud Geometry
-    const cloudGeometry = new THREE.SphereGeometry(0.63, 32, 32);
-
-    // cloud material
-    const cloudMaterial = new THREE.MeshPhongMaterial({
-      map: new THREE.TextureLoader().load('https://cdn.discordapp.com/attachments/1134376125821374504/1156939478259204166/earthCloud.png?ex=6516cb5a&is=651579da&hm=1201b83434d53c3a4a3a0f45dfe202777ba1a39f6bc641574c229ece8e64fd46&'),
+    // Create cloud material
+    const cloudMaterial = new THREE.MeshStandardMaterial({
+      map: cloudTexture,
       transparent: true,
       opacity: 0.7,
     });
 
-    // cloud mesh
+    // Create cloud geometry and mesh
+    const cloudGeometry = new THREE.SphereGeometry(0.63, 32, 32);
     const cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
     scene.add(cloudMesh);
 
-    // galaxy geometry
-    const starGeometry = new THREE.SphereGeometry(80, 64, 64);
+    // Load galaxy texture
+    const galaxyTexture = new THREE.TextureLoader().load('https://cdn.discordapp.com/attachments/1134376125821374504/1156950538999566408/galaxy.png');
 
-    // galaxy material
-    const starMaterial = new THREE.MeshBasicMaterial({
-      map: new THREE.TextureLoader().load('https://cdn.discordapp.com/attachments/1134376125821374504/1156950538999566408/galaxy.png?ex=6516d5a7&is=65158427&hm=ddb1945d9f2a0116436d62a4782ae5088388bc30705fd3378b28a3729ab7f1fa&'),
+    // Create galaxy material
+    const galaxyMaterial = new THREE.MeshBasicMaterial({
+      map: galaxyTexture,
       side: THREE.BackSide,
+      transparent: true,
+      opacity: 0.3,
     });
 
-    // galaxy mesh
-    const starMesh = new THREE.Mesh(starGeometry, starMaterial);
+    // Create galaxy geometry and mesh
+    const starGeometry = new THREE.SphereGeometry(80, 64, 64);
+    const starMesh = new THREE.Mesh(starGeometry, galaxyMaterial);
     scene.add(starMesh);
 
-    // ambient light
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    // Add lights
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
     scene.add(ambientLight);
 
-    // point light
-    const pointLight = new THREE.PointLight(0xffffff, 2);
+    const pointLight = new THREE.PointLight(0xffffff, 30);
     pointLight.position.set(5, 3, 5);
     scene.add(pointLight);
 
-    // point light helper
+    // Add point light helper
     const lightHelper = new THREE.PointLightHelper(pointLight);
     scene.add(lightHelper);
 
-    // handling resizing
+    // Handle window resizing
     window.addEventListener('resize', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
@@ -120,7 +110,7 @@ export default {
       this.renderScene();
     }, false);
 
-    // spinning animation
+    // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
       starMesh.rotation.y -= 0.002;
@@ -130,7 +120,7 @@ export default {
       this.renderScene();
     };
 
-    // rendering
+    // Render the scene
     this.renderScene = () => {
       renderer.render(scene, camera);
     };
