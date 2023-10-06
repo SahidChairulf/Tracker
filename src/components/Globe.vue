@@ -1,10 +1,10 @@
 <template>
   <div ref="container" class="flex inset-y-0 right-0 w-screen">
     <canvas class="webgl"></canvas>
-    <div class=" absolute sm:w-full lg:ml-12 lg:w-1/2 md:w-1/2 top-1/2 left-0 transform -translate-y-1/2">
+    <div class=" absolute w-full lg:ml-12 lg:w-1/2 md:w-1/2 top-1/2 left-0 transform -translate-y-1/2">
       <div class="title text-[#FAF1E4] dark:text-gray-200 px-4 md:px-8">
-        <h1 class="text-xl md:text-2xl lg:text-3xl uppercase font-semibold">Get well soon dear Earth</h1>
-        <p class="text-justify font-normal text-[#FAF1E4] my-2 md:my-4">
+        <h1 class="text-sm md:text-2xl lg:text-3xl uppercase font-semibold">Get well soon dear Earth</h1>
+        <p class="text-justify text-sm lg:text-base md:text-base w-auto font-normal text-[#FAF1E4] my-2 md:my-4">
           If you can't keep clean your old bedroom you will also destroy the new one. Don't look for an
           alternative of earth. Rather keep it clean and habitable. Environment pollution has increased
           significantly. By polluting the environment we are not just destroying the earth, we are destroying
