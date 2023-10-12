@@ -9,14 +9,14 @@
         </label>
         <ul tabindex="0"
           class="bg-[#435334] uppercase text-semibold menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-[#FAF1E4] rounded-box w-52">
-          <RouterLink to="/">
+          <!-- <RouterLink to="/">
             <li>
               <a>Homepage</a>
             </li>
-          </RouterLink>
+          </RouterLink> -->
           <RouterLink to="/globe">
             <li>
-              <a>Maps</a>
+              <a>Home</a>
             </li>
           </RouterLink>
         </ul>

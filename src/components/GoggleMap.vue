@@ -126,7 +126,7 @@ const coordinates = e.features[0].geometry.coordinates[0];
 const centerLng = coordinates.reduce((sum, coord) => sum + coord[0], 0) / coordinates.length;
 const centerLat = coordinates.reduce((sum, coord) => sum + coord[1], 0) / coordinates.length;
 
-const zoom = 10; // Adjust as needed
+const zoom = 12; // Adjust as needed
 const pitch = 60; // Adjust as needed
 const initialBearing = 0; // Initial bearing angle
 const duration = 6000; // Animation duration in milliseconds
@@ -143,14 +143,13 @@ function startAnimation() {
       const elapsedTime = currentTime - startTime;
 
       if (elapsedTime < duration) {
-        const progress = elapsedTime / duration;
 
         // Interpolate center, zoom, pitch, and bearing
         const interpolatedCenterLng = centerLng;
         const interpolatedCenterLat = centerLat;
         const interpolatedZoom = zoom;
         const interpolatedPitch = pitch;
-        const interpolatedBearing = initialBearing + progress * 360;
+        const interpolatedBearing = initialBearing; // Set to initialBearing
 
         map.easeTo({
           center: [interpolatedCenterLng, interpolatedCenterLat],
