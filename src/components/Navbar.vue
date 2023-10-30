@@ -14,7 +14,7 @@
               <a>Homepage</a>
             </li>
           </RouterLink> -->
-          <RouterLink to="/globe">
+          <RouterLink to="/">
             <li>
               <a>Home</a>
             </li>

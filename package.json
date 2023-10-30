@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@maptiler/sdk": "^1.1.2",
+    "@turf/turf": "^6.5.0",
     "axios": "^1.5.1",
     "cesium": "^1.109.0",
     "flowbite": "^1.8.1",

@@ -10,7 +10,7 @@
           significantly. By polluting the environment we are not just destroying the earth, we are destroying
           humanity as well.
         </p>
-        <RouterLink to="/">
+        <RouterLink to="/maps">
         <button class="btn bg-[#9EB384] hover:bg-green-600 text-[#FAF1E4] font-bold py-2 px-4 rounded-lg transition-transform transform hover:scale-110">Let's Clean</button>
       </RouterLink>
       </div>
